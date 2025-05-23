@@ -13,3 +13,51 @@ Se viene chiamato `/posts/1` col verbo `DELETE` ci aspettiamo “Cancellazione d
  Bonus
  - Provare a restituire la lista dei post dalla rotta *index*, in formato `json`
 - Provare a restituire un singolo post dalla rotta *show,* sempre in formato `json`
+
+
+<ref *1> ServerResponse {
+  _events: [Object: null prototype] { finish: [Function: bound resOnFinish] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  outputData: [],
+  outputSize: 0,
+  writable: true,
+  destroyed: false,
+  _last: false,
+  chunkedEncoding: false,
+  shouldKeepAlive: true,
+  maxRequestsOnConnectionReached: false,
+  _defaultKeepAlive: true,
+  useChunkedEncodingByDefault: true,
+  sendDate: true,
+  _removedConnection: false,
+  _removedContLen: false,
+  _removedTE: false,
+  strictContentLength: false,
+  _contentLength: null,
+  _hasBody: true,
+  _trailer: '',
+  finished: false,
+  _headerSent: false,
+  _closed: false,
+  _header: null,
+  _keepAliveTimeout: 5000,
+  _onPendingData: [Function: bound updateOutgoingData],
+  req: IncomingMessage {
+    _events: {
+      close: undefined,
+      error: undefined,
+      data: undefined,
+      end: undefined,
+      readable: undefined
+    },
+
+
+    <ref *2> IncomingMessage {
+  _events: {
+    close: undefined,
+    error: undefined,
+    data: undefined,
+    end: undefined,
+    readable: undefined
+  },
