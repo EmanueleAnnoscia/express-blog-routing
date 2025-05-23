@@ -6,7 +6,7 @@ const router = express.Router();
 // index
 router.get("/", (res,req)=>{
     res.json({
-        data : "lista di tutti i post",
+        data : posts,
         count: posts.length
     })
 })
