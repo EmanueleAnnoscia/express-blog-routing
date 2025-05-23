@@ -1,0 +1,23 @@
+{
+  "name": "express-blog-routing",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmanueleAnnoscia/express-blog-routing.git"
+  },
+  "author": "Emanuele",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmanueleAnnoscia/express-blog-routing/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/EmanueleAnnoscia/express-blog-routing#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
