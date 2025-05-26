@@ -23,12 +23,8 @@ router.get("/:id", (req, res)=>{
 
     if (post === undefined){
         res.status(404)
-        res,json({
+        return res.json({
             error : "post non trovato"
-        })
-    }else {
-        res.json({
-            data: post
         })
     }
     
@@ -55,6 +51,14 @@ router.put("/:id", (req, res)=>{
 // destroy
 router.delete("/:id", (req, res)=>{
     const postId = req.params.id;
+
+    // const newArr = posts.filter((curPost)=> curPost.);
+
+    const index = posts.findIndex((curPost)=> curPost.id === postId);
+
+    posts.splice(index, 1);
+
+
     res.json({
         data: `Cancello interamente il post con id ${postId}`
     })
