@@ -20,6 +20,18 @@ router.get("/:id", (req, res)=>{
     const post = posts.find(curPost => curPost.id === postID)
     // debug
     console.log(res)
+
+    if (post === undefined){
+        res.status(404)
+        res,json({
+            error : "post non trovato"
+        })
+    }else {
+        res.json({
+            data: post
+        })
+    }
+    
     res.json({
         data: `Mostro i dettagli del post con id ${postID}`
     })
