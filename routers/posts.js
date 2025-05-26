@@ -58,6 +58,13 @@ router.delete("/:id", (req, res)=>{
 
     posts.splice(index, 1);
 
+    if (index === -1){
+        res.status(404)
+        return res.json({
+            error: "Post non trovato"
+        })
+    }
+
     res.sendStatus(204)
 
     // res.json({
