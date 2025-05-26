@@ -1,0 +1,77 @@
+import posts from "../data.js"
+
+const show = (req, res)=>{
+    const postID = req.params.id;
+    const post = posts.find(curPost => curPost.id === postID)
+    // debug
+    console.log(res)
+
+    if (post === undefined){
+        res.status(404)
+        return res.json({
+            error : "post non trovato"
+        })
+    }
+    
+    res.json({
+        data: `Mostro i dettagli del post con id ${postID}`
+    })
+}
+
+const index = (req,res)=>{
+    // debug
+    console.log(res)
+    res.json({
+        data : posts,
+        count: posts.length
+    })
+    
+}
+
+const update = (req, res)=>{
+    const postID = req.params.id;
+    res.json({
+        data : `Modifico interamente l'elemento con id ${postID}`
+    })
+}
+
+const store = (req, res)=>{
+    res.json({
+        data: "creo un nuovo post"
+    })
+}
+
+
+const destroy = (req, res)=>{
+    const postId = req.params.id;
+
+    // const newArr = posts.filter((curPost)=> curPost.);
+
+    const index = posts.findIndex((curPost)=> curPost.id === postId);
+
+    posts.splice(index, 1);
+
+    if (index === -1){
+        res.status(404)
+        return res.json({
+            error: "Post non trovato"
+        })
+    }
+
+    res.sendStatus(204)
+
+    // res.json({
+    //     data: `Cancello interamente il post con id ${postId}`
+    // })
+}
+
+const postController = {
+    show,
+    index,
+    update,
+    store,
+    destroy
+};
+
+export default postController;
+
