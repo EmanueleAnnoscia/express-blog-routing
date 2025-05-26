@@ -1,5 +1,7 @@
 import posts from "../data.js"
 
+
+// SHOW
 const show = (req, res)=>{
     const postID = req.params.id;
     const post = posts.find(curPost => curPost.id === postID)
@@ -16,32 +18,44 @@ const show = (req, res)=>{
     res.json({
         data: `Mostro i dettagli del post con id ${postID}`
     })
-}
+};
 
+// INDEX
 const index = (req,res)=>{
-    // debug
-    console.log(res)
+    const tagsFilter = req.query.tags
+
+    let result = posts;
+
+    if(titleFilter !== undefined){
+        result = posts.filter((curPost)=>
+        curPost.tags.includes(tagsFilter)
+        )
+    }
+
+
     res.json({
         data : posts,
         count: posts.length
     })
     
-}
+};
 
+// UPDATE
 const update = (req, res)=>{
     const postID = req.params.id;
     res.json({
         data : `Modifico interamente l'elemento con id ${postID}`
     })
-}
+};
 
+// STORE
 const store = (req, res)=>{
     res.json({
         data: "creo un nuovo post"
     })
-}
+};
 
-
+// DESTROY
 const destroy = (req, res)=>{
     const postId = req.params.id;
 
