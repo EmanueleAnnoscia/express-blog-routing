@@ -58,11 +58,11 @@ router.delete("/:id", (req, res)=>{
 
     posts.splice(index, 1);
 
-    res.status(204)
-    
-    res.json({
-        data: `Cancello interamente il post con id ${postId}`
-    })
+    res.sendStatus(204)
+
+    // res.json({
+    //     data: `Cancello interamente il post con id ${postId}`
+    // })
 })
 
 
